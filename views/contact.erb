@@ -1,0 +1,39 @@
+
+<section class="contactPage">
+</section>
+<audio loop id="contactSong" src="/music/contactSong.wav">
+
+</audio>
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+ <!-- Your like button code -->
+ <div class="fb-like" data-href="https://www.facebook.com/MissileMooseGames/" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+ 
+ <div id="candle">
+ </div>
+ <div id="contactNanny">
+
+ </div>
+
+ <form id="emailSub" action="/response" method="post">
+  <input id="sender"type="text" name="from" value="" placeholder="Sender's Email">
+  <input id="receiver"type="text" name="to" value="" placeholder="Receiver's Email">
+  <input id="subject"type="text" name="subject" value="" placeholder="Subject:">
+  <textarea name="content" rows="8" cols="40">
+    Sign Up for More Nanny Dunkelheit
+  </textarea>
+</form>
+<button id="submit"type="submit" form="emailSub"name="button">Send</button>
+<script type="text/javascript" src="contact.js">
+
+</script>

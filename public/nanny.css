@@ -1,0 +1,1100 @@
+
+html body{
+	overflow: hidden;
+	/*overflow-x: scroll;*/
+	width: 100%;
+}
+footer{
+  z-index: 3;
+  background-color: black;
+  position: fixed;
+  height: 90px;
+  width: 100%;
+  top: 893px;
+  left: 8px;
+	background: url("/images/nav.png") center center no-repeat;
+  /*display: none;*/
+}
+#contactLink{
+	position: relative;
+	color: #D6BA73;
+	text-decoration: none;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 40px;
+	top: 25px;
+	left: 1300px;
+}
+#home{
+	position: relative;
+	color: #D6BA73;
+	text-decoration: none;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 40px;
+	top: 25px;
+	left: 200px;
+}
+.wrapper {
+	height: 100vh;
+	/*overflow-y: hidden;*/
+	overflow-x: auto;
+	perspective: 2px;
+	width: 100%
+}
+.section {
+	/* Needed for children to be absolutely positioned relative to the parent. */
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-shadow: 0 0 5px #000;
+}
+/* Move the pseudo-element back away from the camera,
+ * then scale it back up to fill the viewport.
+/* Force the background image to fill the whole element. */
+.parallax::after {
+	/* Display and position the pseudo-element */
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: 100%;
+	z-index: -2;
+	transform: translateZ(-1px) scale(1.5);
+}
+
+#scene_container{
+	width: 100%;
+	height: 100%;
+  overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: normal;
+}
+.scene{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	margin-left:-4px; /*delete vertical spaces between "screens"*/
+	vertical-align: middle;
+	overflow:hidden;
+	white-space: normal;
+}
+/*Home Page*/
+#clickY{
+	position: absolute;
+	background-color: #62080E;
+	border-radius: 15px;
+	z-index: 6;
+	top: 100px;
+	width: 350px;
+	padding: 10px;
+	text-align: center;
+	height: 50px;
+	color: white;
+	display: none;
+	color: #D6BA73;
+	border: 3px solid #D6BA73;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 30px;
+	opacity: .7;
+}
+#darkness{
+	z-index: 5;
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+	left: 0px;
+	pointer-events: none;
+  -webkit-animation: flicker 5s;
+  animation: flicker 5s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+@keyframes flicker {
+	0% { opacity: 0;}
+	50% { opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes flicker{
+	0% { opacity: 0;}
+	50% { opacity: 1;}
+	100% {opacity: 0;}
+}
+#nannyBlock{
+	background: url("/images/nannyBlockYBloody.png") center center no-repeat;
+	position: absolute;
+	outline: none;
+	border: none;
+	height: 350px;
+	width: 380px;
+	z-index: 4;
+	transform: scale(1.08);
+	left: 1355px;
+	cursor: pointer;
+	transition: all 500ms ease-in-out;
+}
+#nannyBlock:hover{
+	transform: scale(1.2) rotate(3deg);
+}
+#bg1::after{
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/homePageNanny.jpg"); background-position:center center;
+	background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/*Scene 1 -Nanny Arrives*/
+
+.bg2::after {
+  background: url("/images/nannyScene1.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+}
+#scene1Background{
+   position: absolute;
+	 width: 100%;
+	 height:100%;
+	 top: 0px;
+	 background-color: black;
+	 z-index: -5;
+}
+.lightning{
+	z-index: -3;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+	left: 0px;
+  -webkit-animation: flickerAnimation 10s infinite;
+  animation: flickerAnimation 10s infinite;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform: translateZ(0);
+	backface-visibility: hidden;
+	transform: scale(1) translateZ(0);
+}
+@keyframes flickerAnimation {
+	0%{
+		opacity: 0;
+	}
+	2%{
+		opacity: .8;
+	}
+	4%{
+		opacity: 0;
+	}
+	5%{
+		opacity: 0;
+	}
+	6%{
+		opacity: 1;
+	}
+	7%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+#nanny{
+	position: absolute;
+	height: 800px;
+	width: 600px;
+	left: -1250px;
+	top: 130px;
+}
+
+#nanny_sil{
+	position: relative;
+	height: 700px;
+	width: 700px;
+	top: 100px;
+	left: 595px;
+	background: url("/images/nanny_sil.png") center center no-repeat;
+	animation: nanny_move 5s;
+	transition-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	backface-visibility: hidden;
+	transform: scale(1) translateZ(0);
+}
+@keyframes nanny_move{
+	0%{
+		transform: translateX(0px);
+	}
+	100%{
+		transform: translateX(700px);
+	}
+}
+#tree{
+	position: absolute;
+	height: 500px;
+	width:600px;
+	top: 420px;
+	left: 1300px;
+	transform: translate(-1);
+	background: url("/images/tree.png") center center no-repeat;
+	animation: swaying 2s infinite;
+	/*transition-timing-function: ease-in-out;*/
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	backface-visibility: hidden;
+	transform: scale(1) translateZ(0);
+}
+@keyframes swaying{
+	0%{
+		transform: scale(1);
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: skewX(1.2deg);
+		transform: rotate(3deg);
+	}
+100%{
+	transform: scale(1);
+	transform: rotate(0deg);
+	}
+}
+#scene1Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 500px;
+	top: 50px;
+	left: 300px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+}
+/*Nanny Meets the Children*/
+.bg3::after {
+  background: url("/images/scene2.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#clickDoor{
+	position: absolute;
+	background-color: #62080E;
+	border-radius: 15px;
+	z-index: 6;
+	top: 100px;
+	width: 350px;
+	text-align: center;
+	height: 100px;
+	font-size: 20px;
+	color: white;
+	display: none;
+	font-family: 'Arima Madurai', cursive;
+}
+#nanny_sil2{
+	position: absolute;
+	height: 950px;
+	width:800px;
+	top: 100px;
+	left: 1000px;
+	background: url("/images/nanny_sil2.png") center center no-repeat;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	backface-visibility: hidden;
+	transform: scale(1) translateZ(0);
+	z-index: -1;
+}
+#scene2Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType2{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 450px;
+	top: 350px;
+	left: 400px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+	z-index: 2;
+}
+#feelersOne{
+	position: absolute;
+	height: 600px;
+	width: 1100px;
+	top: 400px;
+	left: 770px;
+	background: url("/images/feelers1.png") center center no-repeat;
+	animation: flow1 3s infinite;
+	transition-timing-function: ease-in-out;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translateZ(0);
+}
+@keyframes flow1{
+	0%{
+		transform: translateX(10px) translateY(20px) scale(1.1);
+	}
+	50%{
+		transform: translateX(0px) translateY(50px) scale(1.2);
+	}
+	100%{
+		transform: translateX(10px) translateY(20px) scale(1.1);
+	}
+}
+#feelersTwo{
+	position: absolute;
+	height: 600px;
+	width: 1100px;
+	top: 370px;
+	left: 900px;
+	background: url("/images/feelers2.png") center center no-repeat;
+	animation: flow 2s infinite;
+	transition-timing-function: ease-in-out;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translateZ(0);
+}
+@keyframes flow{
+	0%{
+		transform: translateY(20px) scale(1.1);
+	}
+	50%{
+		transform: translateY(50px) scale(1.2);
+	}
+	100%{
+		transform: translateY(20px) scale(1.1);
+	}
+}
+#door{
+	position: absolute;
+	height: 700px;
+	width:300px;
+	top: 50px;
+	left: 30px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	z-index:3;
+	transform: scale(1.2);
+	background: url("/images/frontDoor.png") center center no-repeat;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transition: all 300ms ease-in-out;
+}
+#door:hover{
+	transform: scale(1.3);
+}
+#mom{
+	position: absolute;
+	height: 900px;
+	width:300px;
+	top: -60px;
+	left: -200px;
+	z-index: 2;
+	background: url("/images/mom.png") center center no-repeat;
+	animation: move_out 3s;
+	transition-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translateZ(0);
+}
+@keyframes move_out{
+	0%{
+		transform: translateX(20px);
+	}
+	50%{
+		transform: translateX(400px) scale(1.2);
+	}
+100%{
+	transform: translateX(460px) scale(1.2);
+	}
+}
+#shadow{
+	position: absolute;
+	height: 200px;
+	z-index: 1;
+	width:600px;
+	top: 600px;
+	left: -250px;
+	animation: move_shadow 3s;
+	transition-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	display: none;
+	background: url("/images/shadow.png") center center no-repeat;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translateZ(0);
+}
+@keyframes move_shadow{
+	0%{
+		transform: translateX(20px);
+	}
+	50%{
+		transform: translateX(300px) scale(1.2);
+	}
+	100%{
+		transform: translateX(300px) scale(1.2);
+	}
+}
+.bg4::after {
+	top: -50px;
+  background: url("/images/scene3.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#scene3Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType3{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 450px;
+	top: 150px;
+	left: 820px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+	z-index: 2;
+}
+#children1{
+	position: absolute;
+	top: 400px;
+	left: 1600px;
+	width: 400px;
+  height: 500px;
+  background: url("images/children1.png") center center no-repeat;
+	animation: meeting 3s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+}
+@keyframes meeting{
+	0%{
+		transform: translateX(0px);
+	}
+	100%{
+		transform: translateX(-300px);
+	}
+}
+#nanny_sil3{
+	position: absolute;
+	top: 170px;
+	left: 300px;
+	width: 545px;
+  height: 692px;
+	transform: scale(1.1);
+  background: url("images/nanny_sil3.png") center center no-repeat;
+	z-index: 2;
+	}
+#nannyShadow_sprite{
+	position: absolute;
+	left: 390px;
+	width: 962px;
+  height: 677px;
+  background: url("images/shadow_ss.png") left center no-repeat;
+	animation: play 1s steps(5);
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(.8);
+}
+@keyframes play {
+	 0% {
+		 background-position: 0px;
+	 }
+    100% {
+			background-position: -4806px;
+		}
+}
+
+.bg5::after {
+  background: url("/images/scene4.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#scene4Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType4{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 550px;
+	top: 450px;
+	left: 1300px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+	z-index: 5;
+}
+#nanny_piper{
+	position: absolute;
+	top: 800px;
+	background: url("/images/nanny_piper.png") center center no-repeat;
+	height: 1200px;
+	width: 900px;
+	left: -500px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	animation: pied_piper 10s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-play-state: paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+@keyframes pied_piper{
+	0%{
+		transform: translateY(-100px) translateX(350px);
+	}
+	30%{
+		transform: translateY(-400px) translateX(550px);
+	}
+	50%{
+		transform: translateY(-700px) translateX(750px);
+	}
+	80%{
+		transform: translateY(-900px) translateX(950px);
+	}
+	100%{
+		transform: translateY(-1100px) translateX(1150px);
+	}
+}
+
+#feelers4{
+	position: absolute;
+	top: -10px;
+	background: url("/images/feelers4.png") center center no-repeat;
+	height: 1800px;
+	width: 2300px;
+	left: -1100px;
+	top: 350px;
+	transform: scale(.4);
+	opacity: .8;
+	-webkit-background-size: cover;
+	background-size: cover;
+	animation: stairShadow 6s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+}
+
+@keyframes stairShadow{
+	0%{
+		transform: translateX(0px) translateY(0px) scale(.4);
+	}
+	100%{
+		transform: translateX(150px) translateY(-400px) scale(.4);
+	}
+}
+#trialType5{
+	position: absolute;
+	top: 500px;
+	left: 1300px;
+	width: 300px;
+	height: 400px;
+	font-family: 'Arima Madurai', cursive;
+	color: white;
+	white-space: normal;
+	font-size: 25px;
+}
+#bg6::after {
+	top: -50px;
+  background-image: url("/images/scene5.png");
+	background-position: center center;
+	background-repeat:  no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#scene5Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType5{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 550px;
+	top: 450px;
+	left: 1300px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+	z-index: 5;
+}
+#bust{
+	position: absolute;
+	background: url("/images/head.png") center center no-repeat;
+	height: 950px;
+	width: 300px;
+	top: 50px;
+	left: 755px;
+	transform: scale(.8);
+	z-index: -1;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#deadbust{
+	position: absolute;
+	background: url("/images/deadhead.png") center center no-repeat;
+	height: 950px;
+	width: 300px;
+	top: 50px;
+	left: 755px;
+	transform: scale(.8);
+	z-index: -1;
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: none;
+}
+#nannyPiper2{
+	position: absolute;
+	background: url("/images/nanny_piper2.png") center center no-repeat;
+	height: 1600px;
+	width: 3500px;
+	top: -300px;
+	left: -2500px;
+	transform: scale(.5);
+	-webkit-background-size: cover;
+	background-size: cover;
+	animation: nannyLead 25s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1) translateZ(0);
+}
+@keyframes nannyLead{
+	0%{
+		transform: translateX(0px) scale(.5);
+	}
+	100%{
+		transform: translateX(3300px) scale(.5);
+	}
+}
+#clouds1{
+	position: absolute;
+	background: url("/images/clouds1.png") center center no-repeat;
+	height: 1600px;
+	width: 4000px;
+	top: -750px;
+	left: 100px;
+	z-index: -2;
+	-webkit-background-size: cover;
+	background-size: cover;
+	animation: cloud_scroll 56s infinite;
+	animation-timing-function: ease-in-out;
+	opacity: .8
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+@keyframes cloud_scroll{
+	0%{
+		transform: translateX(0) scale(.3);
+		opacity: .8;
+	}
+	90%{
+		opacity: .8;
+	}
+	100%{
+		transform: translateX(-2500px) scale(.3);
+		opacity: 0;
+	}
+}
+#clouds2{
+	position: absolute;
+	background: url("/images/clouds2.png") center center no-repeat;
+	height: 1600px;
+	width: 6500px;
+	top: -650px;
+	left: -800px;
+	z-index: -2;
+	-webkit-background-size: cover;
+	background-size: cover;
+	animation: cloud_scroll2 60s infinite;
+	animation-timing-function: ease-in-out;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1) translateZ(0);
+}
+@keyframes cloud_scroll2{
+	0%{
+		transform: translateX(0) scale(.2);
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateX(-3000px) scale(.2);
+		opacity: 0;
+	}
+}
+#moon{
+	position: absolute;
+	background: url("/images/moon.png") center center no-repeat;
+	height: 200px;
+	width: 200px;
+	top: 30px;
+	left: 300px;
+	transform: scale(.6);
+	z-index: -3;
+}
+
+#bg7::after {
+  background: url("/images/scene6.png") center center no-repeat;
+  height: 1900px;
+  width: 100%;
+	top: -800px;
+  -webkit-background-size: cover;
+  background-size: cover;
+	animation: grow 15s;
+	animation-fill-mode:forwards;
+	animation-play-state:paused;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+@keyframes grow{
+	0%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(600px);
+	}
+}
+#scene6Type{
+	position: absolute;
+	height: 300px;
+	width: 600px;
+	font-size: 25px;
+	color: white;
+	display: none;
+}
+#showType6{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	position: absolute;
+	max-width: 550px;
+	top: 150px;
+	left: 300px;
+	color: white;
+	white-space: normal;
+	margin: 0 auto;
+	font-family: 'Arima Madurai', cursive;
+	font-size: 25px;
+	z-index: 5;
+}
+#lightsOut{
+	position: absolute;
+	height: 1900px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	display: none;
+	pointer-events: none;
+}
+#border{
+	background: url("/images/scene6_border.png") center center no-repeat;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: 4;
+	pointer-events: none;
+}
+#light{
+	background: url("/images/light.png") center center no-repeat;
+	cursor: pointer;
+	height: 350px;
+	width: 350px;
+	position: absolute;
+	left: 650px;
+	top: 220px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: 2;
+	border: none;
+	outline: none;
+	display: block;
+	pointer-events: auto;
+}
+#transform{
+	position: absolute;
+	pointer-events: none;
+	left: 650px;
+	width: 687px;
+  height: 1201px;
+	top: -100px;
+  background: url("images/transform.png") left center no-repeat;
+	animation: woo 3.5s steps(6);
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(.8);
+	z-index: 3;
+}
+@keyframes woo {
+	 0% {
+		 background-position: 0px;
+	 }
+    100% {
+			background-position: -4202px;
+		}
+}
+#nannyArms{
+	position: absolute;
+	pointer-events: none;
+	left: 350px;
+	width: 1300px;
+  height: 1201px;
+	top: -180px;
+  background: url("images/nannArms.png") left center no-repeat;
+	animation: heave 3.5s infinite;
+	animation-timing-function: ease-in-out;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(.7);
+	z-index: 2;
+	display: none;
+}
+
+@keyframes heave{
+	0%{
+	transform: translateY(0px) scale(.8);
+	opacity: 1;
+	}
+	50%{
+		transform: translateY(30px) scale(.8);
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(0px) scale(.8);
+		opacity: 1;
+	}
+}
+#nomNom{
+	position: absolute;
+	width: 1956px;
+	height: 1908px;
+	top:-800px;
+	background: url("images/nomNomV2.png") left center no-repeat;
+	animation: nom 6.5s steps(4);
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	-webkit-backface-visibility: hidden;
+	display: none;
+	-webkit-transform: scale(.8);
+	z-index: -1;
+	opacity: .7;
+	pointer-events: none;
+}
+
+@keyframes nom{
+	0% {
+		opacity: 0;
+		background-position: 0px;
+	}
+	 100% {
+		 opacity: .7;
+		 background-position: -7823px;
+	 }
+}
+.contactPage{
+  background-image: url("/images/contact.png");
+	background-position: center center;
+	background-repeat:  no-repeat;
+  height: 900px;
+  width: 1900px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.fb-like{
+	position: relative;
+	top: -640px;
+	left: 1100px;
+	z-index: 5;
+	height: 50px;
+	width: 200px;
+}
+#contact_emailBehind {
+  position:absolute;
+  width:900px;
+  height:500px;
+  left:560px;
+  top:425px;
+  border:0px;
+  border-radius:20px;
+  background-color:white;
+  opacity:.7;
+}
+#info_container {
+  position:absolute;
+  left:177px;
+  top:255px;
+  height:1088px;
+  width:310px;
+  border:1px solid #FF686B;
+}
+input, textarea {
+  font-family:'Amatic SC', cursive;
+  font-size: 20px;
+}
+#emailSub {
+  position:absolute;
+  height:500px;
+  width:400px;
+  left: 1150px;
+  top: 350px;
+	z-index: 2;
+}
+#subject {
+  position:relative;
+  width: 400px;
+  height:30px;
+}
+#sender {
+  position:relative;
+  width:200px;
+  height:30px;
+  bottom:30px;
+}
+#receiver {
+  position:relative;
+  width:200px;
+  height:30px;
+  bottom:20px;
+}
+#submit {
+  font-size: 20px;
+  font-weight:bold;
+  position:relative;
+  height:30px;
+  width:100px;
+  top:400px;
+  left:950px;
+}
+#contactNanny{
+	background-image: url("/images/contact_nanny.png");
+	background-position: center center;
+	background-repeat:  no-repeat;
+	height: 950px;
+	width: 850px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: 3;
+	left: 565px;
+	top: 250px;
+	opacity: .8;
+	position: absolute;
+	animation: sneak 25s infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes sneak{
+	0%{
+		transform: translateX(1500px);
+		opacity: .4;
+	}
+	50%{
+		transform: translateX(900px);
+		opacity: .4;
+	}
+	75%{
+		transform: translateX(-1300px);
+		opacity: .4;
+	}
+	100%{
+		transform: translateX(-1300px);
+		opacity: .4;
+	}
+}
+#candle{
+	background-image: url("/images/candle.png");
+	background-position: center center;
+	background-repeat:  no-repeat;
+	height: 250px;
+	width: 250px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: 3;
+	left: 565px;
+	top: 0px;
+	position: absolute;
+	animation: glowing 4s infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes glowing{
+	0%{
+		transform: scale(1);
+		opacity: .5;
+	}
+	50%{
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	100%{
+		transform: scale(1);
+		opacity: .5;
+}
