@@ -2,7 +2,7 @@ require "sinatra"
 require "sendgrid-ruby"
 
 get "/" do
-  erb :home
+  erb :index
 end
 get "/contact" do
   erb :contact
